@@ -2,6 +2,10 @@
 
 Tool to generate identicons for Stellar wallets - unique icons, generated based on the wallet public key.
 
+Here’s the sample of 90 random icons, to give you an idea of how they will look like:
+![paste (1)](https://user-images.githubusercontent.com/984711/62962128-edc98900-be06-11e9-91d4-e678dc82832b.png)
+
+
 See also the JS version of the same generator here: https://github.com/Lobstrco/stellar-identicon-js
 
 
@@ -22,7 +26,8 @@ If you would like to use this package directly, this is how you do it:
 
 You can also use a web service provided by LOBSTR to integrate identicons inside your app: https://id.lobstr.co
 
-Let's say your Stellar address is: GBIDGDSVQXAHGZNOETS7ADUMWCDSQJU4R53EZRK6ONP3BA42UJL5PAHR
+Let's say your Stellar address is: `GBIDGDSVQXAHGZNOETS7ADUMWCDSQJU4R53EZRK6ONP3BA42UJL5PAHR`
+
 This is how you can get the identicon:
 https://id.lobstr.co/GBIDGDSVQXAHGZNOETS7ADUMWCDSQJU4R53EZRK6ONP3BA42UJL5PAHR.png
 
