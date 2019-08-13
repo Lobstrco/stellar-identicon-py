@@ -3,7 +3,8 @@
 Tool to generate identicons for Stellar wallets - unique icons, generated based on the wallet public key.
 
 Here’s the sample of 90 random icons, to give you an idea of how they will look like:
-![paste (1)](https://user-images.githubusercontent.com/984711/62962128-edc98900-be06-11e9-91d4-e678dc82832b.png)
+
+![image](https://user-images.githubusercontent.com/984711/62962449-9e378d00-be07-11e9-93e3-9a9e79f1f078.png)
 
 
 See also the JS version of the same generator here: https://github.com/Lobstrco/stellar-identicon-js
