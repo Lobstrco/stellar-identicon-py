@@ -1,4 +1,4 @@
-import hashlib
+import base64
 import math
 
 from pydenticon import Generator
@@ -29,6 +29,10 @@ class ExtendedPydenticonGenerator(Generator):
 
     def _get_color(self, data):
         return hsv2rgb(data / 255, 0.7, 0.8)
+
+    def _data_to_digest_byte_list(self, data):
+        decoded_bytes = base64.b32decode(data)
+        return list(decoded_bytes)[2:]
 
     def generate(self, data, width, height, padding=(0, 0, 0, 0), symmetry=False, output_format="png", inverted=False):
         digest_byte_list = self._data_to_digest_byte_list(data)
