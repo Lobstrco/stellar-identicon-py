@@ -21,8 +21,14 @@ class StellarIdenticonGenerator(object):
         except Ed25519PublicKeyInvalidError:
             raise InvalidStellarAddressException("Invalid stellar address")
 
-    def generate(self, public_key, icon_width=210, icon_height=210, output_format="png"):
+    def generate(
+        self, public_key, icon_width=210, icon_height=210, output_format="png"
+    ):
         if self._is_valid_key(public_key):
             return self.generator.generate(
-                public_key, icon_width, icon_height, output_format=output_format, symmetry=True
+                public_key,
+                icon_width,
+                icon_height,
+                output_format=output_format,
+                symmetry=True,
             )
