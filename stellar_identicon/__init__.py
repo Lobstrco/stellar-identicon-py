@@ -1,4 +1,5 @@
-from stellar_base.keypair import Keypair
+from stellar_sdk.keypair import Keypair
+from stellar_sdk.exceptions import Ed25519PublicKeyInvalidError
 
 from .exceptions import InvalidStellarAddressException
 from .generator import ExtendedPydenticonGenerator
@@ -15,9 +16,9 @@ class StellarIdenticonGenerator(object):
 
     def _is_valid_key(self, public_key):
         try:
-            Keypair.from_address(address=public_key)
+            Keypair.from_public_key(public_key=public_key)
             return True
-        except Exception:
+        except Ed25519PublicKeyInvalidError:
             raise InvalidStellarAddressException("Invalid stellar address")
 
     def generate(self, public_key, icon_width=210, icon_height=210, output_format="png"):

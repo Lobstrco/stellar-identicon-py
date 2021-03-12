@@ -14,12 +14,11 @@ setup(
     packages=['stellar_identicon'],
     install_requires=[
         'pydenticon>=0.3,<0.4',
-        'stellar-sdk==1.2.0',
+        'stellar-sdk>=3.0.0,<4.0.0',
     ],
     classifiers=[
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
     ],
 )
