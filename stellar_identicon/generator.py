@@ -13,13 +13,15 @@ class ExtendedPydenticonGenerator(Generator):
         matrix = [[False] * self.columns for row in range(self.rows)]
 
         if symmetry:
-            columns_for_calculation = math.ceil(self.columns / 2.)
+            columns_for_calculation = math.ceil(self.columns / 2.0)
         else:
             columns_for_calculation = self.columns
 
         for column in range(columns_for_calculation):
             for row in range(self.rows):
-                if self._get_bit(column + row * columns_for_calculation, hash_bytes[1:]):
+                if self._get_bit(
+                    column + row * columns_for_calculation, hash_bytes[1:]
+                ):
                     matrix[row][column] = True
 
                     if symmetry:
@@ -34,7 +36,16 @@ class ExtendedPydenticonGenerator(Generator):
         decoded_bytes = base64.b32decode(data)
         return list(decoded_bytes)[2:]
 
-    def generate(self, data, width, height, padding=(0, 0, 0, 0), symmetry=False, output_format="png", inverted=False):
+    def generate(
+        self,
+        data,
+        width,
+        height,
+        padding=(0, 0, 0, 0),
+        symmetry=False,
+        output_format="png",
+        inverted=False,
+    ):
         digest_byte_list = self._data_to_digest_byte_list(data)
 
         # Create the matrix describing which block should be filled-in.
@@ -60,4 +71,6 @@ class ExtendedPydenticonGenerator(Generator):
         if output_format == "ascii":
             return self._generate_ascii(matrix, foreground, background)
         else:
-            return self._generate_image(matrix, width, height, padding, foreground, background, output_format)
+            return self._generate_image(
+                matrix, width, height, padding, foreground, background, output_format
+            )
